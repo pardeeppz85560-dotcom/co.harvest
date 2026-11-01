@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harvest & Co. | Good Things, Grown Well</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announcement">
+    A little goodness delivered to your door ✦ Free shipping over ₹1,499
+  </div>
+
+  <header class="header">
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <a class="brand" href="#home">
+      <span class="logo">h.</span>
+      harvest <i>&</i> co.
+    </a>
+
+    <nav id="mainNav">
+      <a href="#shop">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#journal">Journal</a>
+      <a href="#about">Our Story</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="searchToggle" aria-label="Search">⌕</button>
+      <button id="wishlistToggle">♡ <span id="wishlistCount">0</span></button>
+      <button id="cartToggle" class="bag-btn">
+        Bag <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="search-panel" id="searchPanel">
+    <input id="searchInput" placeholder="Search products..." type="search">
+    <button id="clearSearch">Clear</button>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">✳ GOOD THINGS, GROWN WELL</p>
+        <h1>Bring a little<br><em>goodness</em> home.</h1>
+        <p>
+          Thoughtfully sourced produce, pantry favourites and
+          small-batch finds for your everyday table.
+        </p>
+        <a class="primary-btn" href="#shop">Explore the shop ↗</a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85"
+          alt="Fresh food and ingredients">
+        <span class="image-label">FRESH PICKS · 01/04</span>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <span>✳ Carefully sourced</span>
+      <span>♧ Seasonal selection</span>
+      <span>♡ Made for everyday</span>
+      <span>↗ Packed with care</span>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">A GOOD PLACE TO START</p>
+          <h2>Shop by <em>collection</em></h2>
+        </div>
+      </div>
+
+      <div class="category-grid">
+        <button class="category-card" data-category="Fruit">
+          <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=80" alt="Fruit">
+          <span>Fruit ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Pantry">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=700&q=80" alt="Pantry">
+          <span>Pantry ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Drinks">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80" alt="Tea">
+          <span>Tea & Drinks ↗</span>
+        </button>
+
+        <button class="category-card" data-category="Greens">
+          <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=700&q=80" alt="Greens">
+          <span>Greens ↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE GOOD STUFF</p>
+          <h2>Made for your <em>everyday</em></h2>
+          <p class="muted">Little things that make the table feel special.</p>
+        </div>
+        <span id="resultCount">500</span>
+      </div>
+
+      <div class="shop-toolbar">
+        <div class="filters" id="filterPills">
+          <button class="filter-pill active" data-category="All">All items</button>
+          <button class="filter-pill" data-category="Fruit">Fruit</button>
+          <button class="filter-pill" data-category="Greens">Greens</button>
+          <button class="filter-pill" data-category="Pantry">Pantry</button>
+          <button class="filter-pill" data-category="Bakery">Bakery</button>
+          <button class="filter-pill" data-category="Drinks">Drinks</button>
+        </div>
+
+        <label class="sort-label">
+          Sort:
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="low">Price: Low to high</option>
+            <option value="high">Price: High to low</option>
+            <option value="name">Name: A–Z</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="muted" id="activeFilters"></p>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="load-row">
+        <button class="outline-btn" id="loadMore">
+          Load more goodness ＋
+        </button>
+        <p class="muted">
+          Showing <span id="shownCount">12</span> of
+          <span id="totalCount">500</span> items
+        </p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1100&q=85" alt="Fresh ingredients">
+      <div>
+        <p class="eyebrow">A MORE THOUGHTFUL TABLE</p>
+        <h2>Good food is<br><em>never just food.</em></h2>
+        <p class="muted">
+          It's the people who grow it, the hands that make it,
+          and the moments we share around it.
+        </p>
+        <a class="primary-btn" href="#about">Our story ↗</a>
+      </div>
+    </section>
+
+    <section class="section" id="journal">
+      <p class="eyebrow">NOTES FROM OUR TABLE</p>
+      <h2>The little <em>journal</em></h2>
+
+      <div class="journal-grid">
+        <article>
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80" alt="Healthy meal">
+          <p class="eyebrow">IN SEASON</p>
+          <h3>A simple guide to eating with the seasons</h3>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=800&q=80" alt="Fresh bowl">
+          <p class="eyebrow">AT THE TABLE</p>
+          <h3>Make a little more room for the everyday</h3>
+        </article>
+
+        <article>
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="Tea">
+          <p class="eyebrow">SLOW LIVING</p>
+          <h3>The lovely ritual of a proper cup of tea</h3>
+        </article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div>
+        <p class="eyebrow">A NOTE FROM US TO YOU</p>
+        <h2>A little goodness<br><em>in your inbox.</em></h2>
+      </div>
+
+      <form id="newsletterForm">
+        <label for="emailInput">Seasonal notes, new finds and recipes worth keeping.</label>
+        <div class="email-row">
+          <input id="emailInput" type="email" placeholder="Your email address" required>
+          <button type="submit">↗</button>
+        </div>
+        <small id="newsletterMessage">No noise. Just the good stuff.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer id="about">
+    <div class="footer-top">
+      <a class="brand footer-brand" href="#home">
+        <span class="logo">h.</span> harvest & co.
+      </a>
+      <p>Good things, grown well.<br>For a table full of life.</p>
+      <div class="footer-links">
+        <a href="#shop">Shop all</a>
+        <a href="#collections">Collections</a>
+        <a href="#journal">Journal</a>
+        <a href="mailto:hello@example.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Harvest & Co. Demo storefront.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-heading">
+      <h2>Your bag <span id="drawerCartCount">(0)</span></h2>
+      <button class="close-btn" data-close>×</button>
+    </div>
+    <div id="cartItems" class="drawer-body"></div>
+    <div id="cartFooter"></div>
+  </aside>
+
+  <aside class="drawer" id="wishlistDrawer">
+    <div class="drawer-heading">
+      <h2>Your favourites</h2>
+      <button class="close-btn" data-close>×</button>
+    </div>
+    <div id="wishlistItems" class="drawer-body"></div>
+  </aside>
+
+  <div class="modal" id="productModal">
+    <button class="close-btn modal-close" data-close>×</button>
+    <div id="modalContent"></div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
